@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Chhattisgarh - The Heart of India</title>
+    
+    <!-- Google Fonts for artistic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* CSS Reset and Basic Setup */
+        :root {
+            --primary-color: #2c5e1a; /* Deep Forest Green */
+            --secondary-color: #d4a373; /* Earthy Tan */
+            --text-color: #fefae0; /* Creamy White */
+            --dark-text: #333;
+            --background-overlay: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-text);
+            background: #f4f4f4;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero Section with Full-Screen Background */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-color);
+            background-image: url('https://raw.githubusercontent.com/perlin-cyber-god/chhattisgarh-tourism-guide/main/images/pexels-oleksandr-tiupa-53788-192196.jpg');
+            background-color: var(--primary-color); /* Fallback color if image fails to load */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-overlay);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(44, 94, 26, 0.85); /* Semi-transparent green */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1rem 0;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Main Content Styling */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Artistic Destination Cards */
+        .destinations-category {
+            margin-bottom: 3rem;
+        }
+
+        .destinations-category h3 {
+            font-size: 1.8rem;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .destinations-category h3 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .card .img-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .learn-more-btn {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #c59563;
+        }
+
+
+        /* Map Section */
+        #map .map-container {
+            border: 5px solid var(--secondary-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            height: 450px;
+        }
+
+        #map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .map-buttons p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .location-buttons-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .location-btn {
+            background-color: #fff;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .location-btn:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Trip Planner Section: Sticky Note & Calendar */
+        .trip-planner-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: stretch; /* Make items of same height */
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .sticky-note {
+            background-color: #fff7a0;
+            padding: 1.5rem;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+            width: 300px;
+            font-family: 'Gochi Hand', cursive;
+            font-size: 1.2rem;
+            color: #333;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sticky-note:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        
+        .sticky-note h4 {
+            font-family: 'Gochi Hand', cursive;
+            font-size: 1.5rem;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sticky-note p[contenteditable="true"] {
+            outline: none;
+            border: 2px dashed transparent;
+            transition: border 0.3s ease;
+            flex-grow: 1; /* Allows paragraph to expand */
+            padding: 5px;
+            min-height: 100px;
+        }
+
+        .sticky-note p[contenteditable="true"]:focus {
+            border: 2px dashed rgba(0,0,0,0.2);
+            background-color: #fffacd;
+        }
+
+        .event-planner-box {
+            background: linear-gradient(135deg, var(--primary-color), #4a8a38);
+            color: var(--text-color);
+            padding: 2rem;
+            border-radius: 15px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .event-planner-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .event-planner-box p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .event-btn {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .event-btn:hover {
+            background-color: #e6b88a;
+        }
+
+
+        .calendar-container {
+            width: 450px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .calendar-header {
+            display: flex;
+            align-items: center;
+            padding: 25px 30px 10px;
+            justify-content: space-between;
+        }
+        
+        .calendar-header .month-year {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .calendar-header .nav-icons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-icons span {
+            height: 38px;
+            width: 38px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 38px;
+            border-radius: 50%;
+            color: var(--dark-text);
+            transition: background 0.2s ease;
+        }
+
+        .nav-icons span:hover {
+            background: #f2f2f2;
+        }
+        
+        .calendar-body {
+            padding: 20px;
+        }
+        
+        .calendar-body ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        
+        .calendar-body .days {
+            margin-bottom: 20px;
+        }
+        
+        .calendar-body li {
+            width: calc(100% / 7);
+            font-size: 1.07rem;
+            color: var(--dark-text);
+        }
+        
+        .calendar-body .weekdays li {
+            font-weight: 500;
+            cursor: default;
+        }
+        
+        .calendar-body .days li {
+            margin-top: 30px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .days li.inactive {
+            color: #aaa;
+        }
+        
+        .days li.active {
+            color: #fff;
+        }
+        
+        .days li::before {
+            position: absolute;
+            content: "";
+            height: 40px;
+            width: 40px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: -1;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        
+        .days li.active::before {
+            background: var(--primary-color);
+        }
+        
+        .days li:not(.active):hover::before {
+            background: #f2f2f2;
+        }
+
+
+        /* Plan Your Trip & Booking Section */
+        #plan {
+            text-align: center;
+        }
+
+        .plan-details {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .plan-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .plan-box i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .plan-box h4 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .plan-box p {
+            color: #555;
+        }
+        
+        .booking-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), #5a9c42);
+            color: var(--text-color);
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .booking-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: var(--text-color);
+        }
+        
+        .visitor-counter {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #fefae0;
+        }
+
+        #visitor-count {
+            font-weight: bold;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 5px;
+        }
+        
+        .share-section {
+            margin-bottom: 1rem;
+        }
+
+        #share-btn {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #share-btn:hover {
+            background-color: #e6b88a;
+            transform: scale(1.05);
+        }
+
+        /* Details Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-container {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .modal-close-btn:hover {
+            color: #333;
+        }
+        
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .modal-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .modal-content li {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .modal-content li strong {
+            color: var(--primary-color);
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+        
+        .qr-code-content {
+            text-align: center;
+        }
+
+        .qr-code-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        #qrcode {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* AI Chatbot Styles */
+        .chatbot-toggler {
+            position: fixed;
+            bottom: 30px;
+            right: 35px;
+            height: 50px;
+            width: 50px;
+            color: var(--text-color);
+            background: var(--primary-color);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 2000;
+        }
+        body.show-chatbot .chatbot-toggler {
+            transform: rotate(90deg);
+        }
+        .chatbot-toggler span {
+            position: absolute;
+        }
+        .chatbot-toggler span:last-child,
+        body.show-chatbot .chatbot-toggler span:first-child {
+            opacity: 0;
+        }
+        body.show-chatbot .chatbot-toggler span:last-child {
+            opacity: 1;
+        }
+
+        .chatbot {
+            position: fixed;
+            right: 35px;
+            bottom: 100px;
+            width: 420px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                        0 32px 64px -48px rgba(0,0,0,0.5);
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            overflow: hidden;
+            transform-origin: bottom right;
+            transition: all 0.1s ease;
+            z-index: 2000;
+        }
+        body.show-chatbot .chatbot {
+            transform: scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .chatbot header {
+            background: var(--primary-color);
+            padding: 16px 0;
+            text-align: center;
+            position: relative;
+        }
+        .chatbot header h2 {
+            color: var(--text-color);
+            font-size: 1.4rem;
+        }
+        .chatbot header .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-color);
+            cursor: pointer;
+            display: none;
+        }
+        .chatbot .chatbox {
+            height: 510px;
+            overflow-y: auto;
+            padding: 30px 20px 100px;
+            list-style: none;
+        }
+        .chatbox .chat {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .chatbox .incoming span {
+            height: 32px;
+            width: 32px;
+            color: var(--text-color);
+            background: var(--primary-color);
+            text-align: center;
+            line-height: 32px;
+            border-radius: 4px;
+            margin: 0 10px 7px 0;
+            align-self: flex-start;
+        }
+        .chatbox .outgoing {
+            margin: 20px 0;
+            justify-content: flex-end;
+        }
+        .chatbox .chat p {
+            color: #fff;
+            background: var(--primary-color);
+            border-radius: 10px 10px 0 10px;
+            padding: 12px 16px;
+            max-width: 75%;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+        }
+        .chatbox .chat p.error {
+            background: #e74c3c;
+            color: #fff;
+        }
+        .chatbox .outgoing p {
+            background: var(--secondary-color);
+            color: var(--dark-text);
+            border-radius: 10px 10px 10px 0;
+        }
+        .chatbot .chat-input {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            gap: 5px;
+            background: #fff;
+            padding: 5px 20px;
+            border-top: 1px solid #ccc;
+        }
+        .chat-input textarea {
+            height: 55px;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 0.95rem;
+            resize: none;
+            padding: 16px 15px 16px 0;
+        }
+        .chat-input span {
+            align-self: flex-end;
+            height: 55px;
+            line-height: 55px;
+            color: var(--primary-color);
+            font-size: 1.35rem;
+            cursor: pointer;
+            visibility: hidden;
+        }
+        .chat-input textarea:valid ~ span {
+            visibility: visible;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .calendar-container {
+                order: -1; /* Move calendar to the top on smaller screens */
+                width: 100%;
+                max-width: 600px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            nav ul { flex-direction: column; text-align: center; }
+            .container { padding: 2rem 1rem; }
+            .section-title { font-size: 2.2rem; }
+            .trip-planner-wrapper { flex-direction: column; align-items: center; }
+            .calendar-container { width: 100%; max-width: 450px; }
+        }
+
+        @media (max-width: 490px) {
+            .chatbot {
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
+            .chatbot .chatbox {
+                height: 90%;
+            }
+            .chatbot header .close-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Chhattisgarh</h1>
+            <p>An Unexplored Paradise</p>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#viewpoints">Viewpoints</a></li>
+            <li><a href="#map">Explore Map</a></li>
+            <li><a href="#trip-planner">Trip Planner</a></li>
+            <li><a href="#plan">Plan Your Trip</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="container">
+            <h2 class="section-title">Discover the Soul of India</h2>
+            <p style="text-align: center; max-width: 800px; margin: auto; color: #555; font-size: 1.1rem;">
+                Welcome to Chhattisgarh, a land of mesmerizing natural beauty, ancient history, and vibrant tribal culture. Often called the "Rice Bowl of India," this state is covered in lush forests, dotted with majestic waterfalls, and home to unique wildlife. From the thundering Chitrakote Falls to the ancient temples of Sirpur, Chhattisgarh offers an unexplored paradise for every traveler.
+            </p>
+        </section>
+
+        <!-- Destinations Section -->
+        <section id="destinations" class="container">
+            <h2 class="section-title">Must-Visit Destinations</h2>
+            
+            <div class="destinations-category">
+                <h3><i class="fa-solid fa-users"></i> For Families</h3>
+                <div class="destination-grid">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="https://raw.githubusercontent.com/perlin-cyber-god/chhattisgarh-tourism-guide/main/images/chitrakoot-falls.jpg" alt="The majestic Chitrakote Waterfall during monsoon">
+                        </div>
+                        <div class="card-content">
+                            <h3>Chitrakote Waterfall</h3>
+                            <p>The whole family will be awestruck by the "Niagara of India." It's an easily accessible spot perfect for a day trip and amazing photos.</p>
+                            <button class="learn-more-btn" data-target="chitrakote">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="https://raw.githubusercontent.com/perlin-cyber-god/chhattisgarh-tourism-guide/main/images/tiger.jpg" alt="A tiger at the Nandan Van Zoo & Safari">
+                        </div>
+                        <div class="card-content">
+                            <h3>Nandan Van Zoo & Safari</h3>
+                            <p>Located near Raipur, this zoo and safari park is a hit with kids, offering a chance to see tigers, lions, and other wildlife up close.</p>
+                            <button class="learn-more-btn" data-target="nandanvan">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="https://raw.githubusercontent.com/perlin-cyber-god/chhattisgarh-tourism-guide/main/images/tribal-sculpture-at-purkhoti.jpg" alt="Tribal statues at Purkhouti Muktangan">
+                        </div>
+                        <div class="card-content">
+                            <h3>Purkhouti Muktangan</h3>
+                            <p>An open-air museum that showcases the rich tribal culture of the state through life-like statues and dioramas. It's both fun and educational.</p>
+                            <button class="learn-more-btn" data-target="purkhouti">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="destinations-category">
+                <h3><i class="fa-solid fa-graduation-cap"></i> For College Students & Adventurers</h3>
+                <div class="destination-grid">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="https://raw.githubusercontent.com/perlin-cyber-god/chhattisgarh-tourism-guide/main/images/mainpat%20hilss.webp" alt="Green hills of Mainpat">
+                        </div>
+                        <div class="card-content">
+                            <h3>Mainpat</h3>
+                            <p>Known as the 'Shimla of Chhattisgarh,' this hill station is perfect for trekking, exploring Tibetan refugee settlements, and enjoying cool weather.</p>
+                            <button class="learn-more-btn" data-target="mainpat">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="https://raw.githubusercontent.com/perlin-cyber-god/chhattisgarh-tourism-guide/main/images/tirathgarh-falls.jpg" alt="Tirathgarh Waterfall cascading down rocks">
+                        </div>
+                        <div class="card-content">
+                            <h3>Tirathgarh Falls</h3>
+                            <p>A stunning block-type waterfall cascading down in steps. The surrounding area in Kanger Valley National Park is great for light trekking.</p>
+                             <button class="learn-more-btn" data-target="tirathgarh">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="https://raw.githubusercontent.com/perlin-cyber-god/chhattisgarh-tourism-guide/main/images/tourism.png" alt="A vibrant procession during Bastar Dussehra festival">
+                        </div>
+                        <div class="card-content">
+                            <h3>Bastar Dussehra</h3>
+                            <p>Experience the world's longest festival (75 days)! It's a unique cultural immersion unlike any other, showcasing vibrant tribal traditions.</p>
+                            <button class="learn-more-btn" data-target="bastardussehra">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="destinations-category">
+                <h3><i class="fa-solid fa-person-cane"></i> For Senior Citizens & Relaxation</h3>
+                <div class="destination-grid">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="https://raw.githubusercontent.com/perlin-cyber-god/chhattisgarh-tourism-guide/main/images/sirpur.jpg" alt="Ancient ruins of temples at the Sirpur historical site">
+                        </div>
+                        <div class="card-content">
+                            <h3>Sirpur</h3>
+                            <p>A peaceful archaeological site with rich Buddhist and Hindu heritage. The flat terrain makes it easy to explore the stunning temple ruins.</p>
+                            <button class="learn-more-btn" data-target="sirpur">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="https://raw.githubusercontent.com/perlin-cyber-god/chhattisgarh-tourism-guide/main/images/danteshwari-temple-jagdalpur-chhattisgarh-1-attr-hero%20(1).jpg" alt="The historic Danteshwari Temple">
+                        </div>
+                        <div class="card-content">
+                            <h3>Danteshwari Temple</h3>
+                            <p>One of the 52 Shakti Peethas, this ancient temple in Dantewada offers a serene and spiritual experience for pilgrims and visitors.</p>
+                            <button class="learn-more-btn" data-target="danteshwari">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="https://seepositive.in/wp-content/uploads/2025/01/c33d74ea-ea6e-424a-a54b-bf35686896f9.jpg" alt="Temples along the river at Rajim">
+                        </div>
+                        <div class="card-content">
+                            <h3>Rajim</h3>
+                            <p>Known as the 'Prayag of Chhattisgarh,' this holy town is famous for its beautiful temples at the confluence of three rivers. Ideal for a peaceful visit.</p>
+                            <button class="learn-more-btn" data-target="rajim">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scenic Viewpoints Section -->
+        <section id="viewpoints" class="container">
+            <h2 class="section-title">Scenic Viewpoints</h2>
+            <div class="destination-grid">
+                <!-- Viewpoint Card 1 -->
+                <div class="card">
+                    <div class="img-container">
+                        <img src="https://feeds.abplive.com/onecms/images/uploaded-images/2024/08/05/5d1f75efe3ee0d21c4828901dac7b8911722847965249584_original.jpg" alt="Panoramic view from Kailash Gufa viewpoint">
+                    </div>
+                    <div class="card-content">
+                        <h3>Kailash Gufa Viewpoint</h3>
+                        <p>Located in Kanger Valley National Park, offering breathtaking panoramic views of the dense forest canopy. A serene spot for photographers.</p>
+                        <button class="learn-more-btn" data-target="kailashgufa">Learn More</button>
+                    </div>
+                </div>
+                <!-- Viewpoint Card 2 -->
+                <div class="card">
+                    <div class="img-container">
+                        <img src="https://travelshareninspire.wordpress.com/wp-content/uploads/2020/03/dsc_0058.jpg?w=1400" alt="Sunrise over the hills of Mainpat">
+                    </div>
+                    <div class="card-content">
+                        <h3>Mainpat Sunrise Point</h3>
+                        <p>Witness a magical sunrise over the rolling hills of 'Chhattisgarh's Shimla'. An unforgettable experience for early risers.</p>
+                        <button class="learn-more-btn" data-target="mainpatsunrise">Learn More</button>
+                    </div>
+                </div>
+                <!-- Viewpoint Card 3 -->
+                <div class="card">
+                    <div class="img-container">
+                        <img src="https://i0.wp.com/bastariya.com/wp-content/uploads/2018/10/Gadiya-Mountain-Kanker-1.webp?fit=800%2C600&ssl=1" alt="View of the town from Gadiya Mountain peak">
+                    </div>
+                    <div class="card-content">
+                        <h3>Gadiya Mountain</h3>
+                        <p>A historic fort-mountain in Kanker that provides a stunning 360-degree view of the town and the surrounding landscape below.</p>
+                        <button class="learn-more-btn" data-target="gadiya">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section id="map" class="container">
+            <h2 class="section-title">Explore on Map</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3831633.992850901!2d80.40492263864115!3d21.27865672477561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28b552e9125355%3A0x1b7234661042733d!2sChhattisgarh!5e0!3m2!1sen!2sin!4v1678886569123!5m2!1sen!2sin&t=h" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="map-buttons">
+                <p>Click a button below to view a specific location on Google Maps:</p>
+                <div class="location-buttons-grid">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Chitrakote+Falls" target="_blank" class="location-btn">Chitrakote Falls</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Nandan+Van+Zoo+%26+Safari,+Raipur" target="_blank" class="location-btn">Nandan Van Zoo</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mainpat,+Chhattisgarh" target="_blank" class="location-btn">Mainpat</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Tirathgarh+Falls" target="_blank" class="location-btn">Tirathgarh Falls</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Sirpur,+Chhattisgarh" target="_blank" class="location-btn">Sirpur</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Danteshwari+Temple,+Dantewada" target="_blank" class="location-btn">Danteshwari Temple</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Gadiya+Mountain,+Kanker" target="_blank" class="location-btn">Gadiya Mountain</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trip Planner Section -->
+        <section id="trip-planner" class="container">
+            <h2 class="section-title">Trip Planner</h2>
+            <div class="trip-planner-wrapper">
+                <!-- Editable Sticky Note -->
+                <div class="sticky-note">
+                    <h4><i class="fa-solid fa-thumbtack"></i> My Travel Notes</h4>
+                    <p contenteditable="true" id="editable-note">
+                        Click here to edit! Jot down your travel ideas, packing lists, or reminders...
+                    </p>
+                </div>
+
+                <!-- Special Occasion Box -->
+                <div class="event-planner-box">
+                    <h4><i class="fa-solid fa-gift"></i> Plan a Special Occasion!</h4>
+                    <p>Looking for a unique way to celebrate a birthday or anniversary? Let us help you plan a memorable trip to one of Chhattisgarh's beautiful destinations.</p>
+                    <a href="mailto:plan@chhattisgarhtourism.com" class="event-btn">Contact Us</a>
+                </div>
+
+                <!-- Calendar -->
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <p class="month-year" id="month-year"></p>
+                        <div class="nav-icons">
+                            <span id="prev-month" class="fa-solid fa-chevron-left"></span>
+                            <span id="next-month" class="fa-solid fa-chevron-right"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-body">
+                        <ul class="weekdays">
+                            <li>Sun</li><li>Mon</li><li>Tue</li><li>Wed</li><li>Thu</li><li>Fri</li><li>Sat</li>
+                        </ul>
+                        <ul class="days" id="calendar-days"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plan Your Trip Section -->
+        <section id="plan" class="container">
+            <h2 class="section-title">Plan Your Adventure</h2>
+            <div class="plan-details">
+                <div class="plan-box">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <h4>How to Reach</h4>
+                    <p><strong>By Air:</strong> Swami Vivekananda Airport (RPR) in Raipur connects to major cities.</p>
+                </div>
+                <div class="plan-box">
+                    <i class="fa-solid fa-train-subway"></i>
+                    <h4>By Train/Road</h4>
+                    <p>Raipur and Bilaspur are major rail hubs with great road connectivity.</p>
+                </div>
+                <div class="plan-box">
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    <h4>Best Time to Visit</h4>
+                    <p>October to March offers the most pleasant weather for sightseeing.</p>
+                </div>
+            </div>
+            <!-- This hyperlink goes to Redbus for bus booking to Raipur -->
+            <a href="https://www.redbus.in/bus-tickets/raipur" target="_blank" class="booking-btn">
+                <i class="fa-solid fa-bus"></i> Book Your Bus Tickets
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="visitor-counter">
+            <i class="fa-solid fa-eye"></i> Website Visitors: <span id="visitor-count">0</span>
+        </div>
+        <div class="share-section">
+            <button id="share-btn"><i class="fa-solid fa-qrcode"></i> Share via QR Code</button>
+        </div>
+        <p>&copy; 2025 Chhattisgarh Tourism Guide. Designed with ❤️.</p>
+    </footer>
+
+    <!-- Details Modal -->
+    <div id="details-modal-overlay" class="modal-overlay">
+        <div class="modal-container">
+            <span id="modal-close" class="modal-close-btn fa-solid fa-xmark"></span>
+            <h2 id="modal-title" class="modal-title">Destination Details</h2>
+            <div id="modal-content" class="modal-content">
+                <!-- Content will be injected here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- QR Code Modal -->
+    <div id="qr-code-modal-overlay" class="modal-overlay">
+        <div class="modal-container">
+            <span id="qr-modal-close" class="modal-close-btn fa-solid fa-xmark"></span>
+            <h2 class="modal-title">Share this Guide</h2>
+            <div class="qr-code-content">
+                <p>Scan this QR code with a mobile device to open this website.</p>
+                <div id="qrcode"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-toggler">
+        <span class="fa-solid fa-robot"></span>
+        <span class="fa-solid fa-xmark"></span>
+    </div>
+    <div class="chatbot">
+        <header>
+            <h2>Chhattisgarh Guide Bot</h2>
+            <span class="close-btn fa-solid fa-xmark"></span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="fa-solid fa-robot"></span>
+                <p>Hello there! 👋<br>How can I help you discover Chhattisgarh today?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Ask a question..." required></textarea>
+            <span id="send-btn" class="fa-solid fa-paper-plane"></span>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        // --- THIS IS YOUR LIVE WEBSITE URL ---
+        // The QR code will point to this address.
+        const publicURL = "https://perlin-cyber-god.github.io/chhattisgarh-tourism-guide/";
+
+        // Data for Modals
+        const destinationsData = {
+            chitrakote: {
+                title: "Chitrakote Waterfall",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> Formed by the mighty Indravati River descending from the Vindhya mountains. Its name has tribal roots in the Bastar region.</li>
+                        <li><strong>Famous For:</strong> Being called the "Niagara of India" due to its incredible width (over 980 feet) and horseshoe shape, especially during monsoon.</li>
+                        <li><strong>Tribes & People:</strong> Located in the heart of the Bastar tribal belt, home to Gond, Maria, and Muria tribes. Gondi and Halbi are common dialects.</li>
+                        <li><strong>Highlights:</strong> The view is most spectacular from July to October. You can often see rainbows forming in the mist, and boating is available at the bottom.</li>
+                    </ul>
+                `
+            },
+            nandanvan: {
+                title: "Nandan Van Zoo & Safari",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> Developed as a modern zoological park and animal rescue center on the outskirts of Naya Raipur.</li>
+                        <li><strong>Famous For:</strong> Its large, open safari enclosures that allow visitors to see animals in a more natural environment.</li>
+                        <li><strong>People & Dialects:</strong> Situated near the capital, Raipur, where the primary languages spoken are Chhattisgarhi and Hindi.</li>
+                        <li><strong>Highlights:</strong> The main attractions are the Tiger, Lion, and Herbivore safaris experienced from a secured bus, providing an exciting jungle adventure.</li>
+                    </ul>
+                `
+            },
+            purkhouti: {
+                title: "Purkhouti Muktangan",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> A visionary project by the Chhattisgarh Government to create a living museum that preserves and showcases the state's diverse tribal heritage.</li>
+                        <li><strong>Famous For:</strong> Its expansive open-air campus featuring life-sized sculptures, tribal huts, and artworks depicting the lifestyle and culture of local tribes.</li>
+                        <li><strong>Tribes Represented:</strong> It provides a glimpse into the lives of various tribes such as the Gond, Baiga, Korwa, and Abhujmaria.</li>
+                        <li><strong>Highlights:</strong> A fantastic educational experience, offering an immersive walk-through of Chhattisgarh's rich cultural tapestry without extensive travel.</li>
+                    </ul>
+                `
+            },
+            mainpat: {
+                title: "Mainpat",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> Became a prominent settlement for Tibetan refugees who fled the Chinese invasion of Tibet in 1959, giving it a unique cultural identity.</li>
+                        <li><strong>Famous For:</strong> Often called the 'Shimla of Chhattisgarh' for its cool climate and scenic hills. It's also known for its unique 'Bouncing Land' (Jaljala).</li>
+                        <li><strong>People & Dialects:</strong> A beautiful blend of Tibetan and local tribal communities. You'll hear Tibetan, Chhattisgarhi, and Hindi spoken here.</li>
+                        <li><strong>Highlights:</strong> Visiting the serene Dhakpo Monastery, trekking to Tiger Point, and experiencing the strange phenomenon of the 'bouncing' swampy land.</li>
+                    </ul>
+                `
+            },
+            tirathgarh: {
+                title: "Tirathgarh Falls",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> A natural, multi-tiered waterfall originating within the dense forests of the Kanger Valley National Park.</li>
+                        <li><strong>Famous For:</strong> Its picturesque block-style cascade, where water splits into multiple streams and tumbles down a series of rocky steps.</li>
+                        <li><strong>Tribes & People:</strong> The area is inhabited by local Bastar tribes like the Dhurwa and Bhatra people.</li>
+                        <li><strong>Highlights:</strong> Visitors can walk down the steps to the bottom pool for a refreshing experience. The nearby Shiva-Parvati temple adds a spiritual touch.</li>
+                    </ul>
+                `
+            },
+            bastardussehra: {
+                title: "Bastar Dussehra",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> A 600-year-old tradition started by 15th-century King Purushottam Deo. It is not linked to the Ramayana story but is a festival to honor Devi Danteshwari.</li>
+                        <li><strong>Famous For:</strong> Being the world's longest festival, celebrated over 75 days with unique and elaborate tribal rituals.</li>
+                        <li><strong>Tribes Involved:</strong> A grand assembly of all major tribes from the Bastar region, who come to pay homage to the goddess and the king.</li>
+                        <li><strong>Highlights:</strong> The construction and procession of a massive double-decker wooden chariot (ratha), which is pulled by hundreds of villagers.</li>
+                    </ul>
+                `
+            },
+            sirpur: {
+                title: "Sirpur",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> An ancient capital of the Panduvanshi dynasty from the 5th to 8th centuries CE, it was a major center for Buddhist learning.</li>
+                        <li><strong>Famous For:</strong> Its extensive and well-preserved archaeological ruins, most notably the Laxman Temple, one of India's finest brick temples.</li>
+                        <li><strong>People & Dialects:</strong> Located in the Mahasamund district, where the primary language is Chhattisgarhi.</li>
+                        <li><strong>Highlights:</strong> The incredible architecture of the ancient temples, the peaceful atmosphere of the Anand Prabhu Kuti Vihar monastery, and the annual Sirpur National Dance and Music Festival.</li>
+                    </ul>
+                `
+            },
+            danteshwari: {
+                title: "Danteshwari Temple",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> Considered one of the 52 sacred Shakti Peethas. Legend says it is where a tooth (Dant) of the goddess Sati fell.</li>
+                        <li><strong>Famous For:</strong> Being the primary deity of the Bastar region and a major pilgrimage site for Hindus. The temple plays a central role in the Bastar Dussehra festival.</li>
+                        <li><strong>Tribes & People:</strong> Deeply revered by the local tribes and the former royal family of Bastar.</li>
+                        <li><strong>Highlights:</strong> The unique black stone idol of the goddess, the spiritual energy of the temple, and its historical and cultural significance to the entire region.</li>
+                    </ul>
+                `
+            },
+            rajim: {
+                title: "Rajim",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> An ancient holy town with references in Hindu Puranas, considered a sacred site for centuries.</li>
+                        <li><strong>Famous For:</strong> Being known as the "Prayag of Chhattisgarh" due to the holy confluence (Triveni Sangam) of three rivers: Mahanadi, Pairi, and Sondur.</li>
+                        <li><strong>People & Dialects:</strong> A prominent religious town where Chhattisgarhi and Hindi are spoken.</li>
+                        <li><strong>Highlights:</strong> The beautifully carved Rajiv Lochan Temple and the Kuleshwar Mahadev Temple. The annual Rajim Kumbh Mela attracts thousands of saints and pilgrims.</li>
+                    </ul>
+                `
+            },
+             kailashgufa: {
+                title: "Kailash Gufa Viewpoint",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> A natural cave formation discovered in 1993, located deep within the Kanger Valley National Park.</li>
+                        <li><strong>Famous For:</strong> The stunning panoramic views of the lush valley from the viewpoint and the natural stalagmite formation resembling a Shiva Lingam inside the cave.</li>
+                        <li><strong>Tribes & People:</strong> Inhabited by the tribes of the Bastar region, who hold the cave in high religious regard.</li>
+                        <li><strong>Highlights:</strong> The cave walls produce musical sounds when struck. The feeling of being surrounded by pristine, untouched wilderness is a key experience.</li>
+                    </ul>
+                `
+            },
+            mainpatsunrise: {
+                title: "Mainpat Sunrise Point",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> A designated viewpoint in the Mainpat hills that offers the best vantage point for watching the sunrise.</li>
+                        <li><strong>Famous For:</strong> Providing spectacular, unobstructed views of the sun rising over the rolling hills and valleys of the Sarguja region.</li>
+                        <li><strong>People & Dialects:</strong> The area is home to both Tibetan and local Chhattisgarhi communities.</li>
+                        <li><strong>Highlights:</strong> An incredibly peaceful and magical experience, especially for photographers and nature lovers. It is the perfect way to start a day in Mainpat.</li>
+                    </ul>
+                `
+            },
+            gadiya: {
+                title: "Gadiya Mountain",
+                content: `
+                    <ul>
+                        <li><strong>Origin:</strong> Historically, it served as a natural and formidable fort for the Kandra dynasty kings.</li>
+                        <li><strong>Famous For:</strong> A perennial water tank at the summit that, according to legend, never dries up. It also offers breathtaking 360-degree views of Kanker town.</li>
+                        <li><strong>People & Dialects:</strong> Located in the Kanker district, where people primarily speak Chhattisgarhi and Halbi.</li>
+                        <li><strong>Highlights:</strong> A combination of a short trek, history, and mythology. The legend of the magical water source is a major attraction for visitors.</li>
+                    </ul>
+                `
+            }
+        };
+
+
+        // Modal Logic
+        const modalOverlay = document.getElementById("details-modal-overlay");
+        const modalTitle = document.getElementById("modal-title");
+        const modalContent = document.getElementById("modal-content");
+        const modalCloseBtn = document.getElementById("modal-close");
+        const learnMoreButtons = document.querySelectorAll(".learn-more-btn");
+
+        learnMoreButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const target = button.getAttribute("data-target");
+                const data = destinationsData[target];
+
+                if (data) {
+                    modalTitle.textContent = data.title;
+                    modalContent.innerHTML = data.content;
+                    modalOverlay.classList.add("active");
+                }
+            });
+        });
+
+        const closeModal = () => {
+            modalOverlay.classList.remove("active");
+        };
+
+        modalCloseBtn.addEventListener("click", closeModal);
+        modalOverlay.addEventListener("click", (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+        
+        // QR Code Modal Logic
+        const shareBtn = document.getElementById("share-btn");
+        const qrModalOverlay = document.getElementById("qr-code-modal-overlay");
+        const qrModalCloseBtn = document.getElementById("qr-modal-close");
+        const qrcodeContainer = document.getElementById("qrcode");
+        let qrcode = null;
+
+        if (shareBtn) {
+            shareBtn.addEventListener("click", () => {
+                qrModalOverlay.classList.add("active");
+                qrcodeContainer.innerHTML = "";
+                
+                qrcode = new QRCode(qrcodeContainer, {
+                    text: publicURL,
+                    width: 256,
+                    height: 256,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+            });
+        }
+
+        const closeQrModal = () => {
+            qrModalOverlay.classList.remove("active");
+        };
+
+        if (qrModalCloseBtn) {
+            qrModalCloseBtn.addEventListener("click", closeQrModal);
+        }
+
+        if (qrModalOverlay) {
+            qrModalOverlay.addEventListener("click", (e) => {
+                if (e.target === qrModalOverlay) {
+                    closeQrModal();
+                }
+            });
+        }
+
+        // Visitor Counter Logic
+        const visitorCountElement = document.getElementById("visitor-count");
+        if (typeof(Storage) !== "undefined") {
+            let count = localStorage.getItem("visitorCount") || 0;
+            count = parseInt(count) + 1;
+            localStorage.setItem("visitorCount", count);
+            if (visitorCountElement) {
+                visitorCountElement.textContent = count.toLocaleString();
+            }
+        } else {
+            if (visitorCountElement) {
+                visitorCountElement.textContent = "N/A";
+            }
+        }
+
+        // Editable Sticky Note Logic
+        const editableNote = document.getElementById('editable-note');
+        if (editableNote) {
+            const savedNote = localStorage.getItem('travelNote');
+            if (savedNote) {
+                editableNote.innerHTML = savedNote;
+            }
+            editableNote.addEventListener('blur', () => {
+                localStorage.setItem('travelNote', editableNote.innerHTML);
+            });
+        }
+
+
+        const chatbotToggler = document.querySelector(".chatbot-toggler");
+        const closeBtn = document.querySelector(".chatbot .close-btn");
+        const chatbox = document.querySelector(".chatbot .chatbox");
+        const chatInput = document.querySelector(".chat-input textarea");
+        const sendChatBtn = document.querySelector(".chat-input span");
+
+        let userMessage;
+
+        const createChatLi = (message, className) => {
+            const chatLi = document.createElement("li");
+            chatLi.classList.add("chat", className);
+            let chatContent = className === "outgoing" ? `<p>${message}</p>` : `<span class="fa-solid fa-robot"></span><p>${message}</p>`;
+            chatLi.innerHTML = chatContent;
+            return chatLi;
+        }
+
+        const generateResponse = (incomingChatLi) => {
+            const messageElement = incomingChatLi.querySelector("p");
+            const userText = userMessage.toLowerCase();
+            let response = "I'm sorry, I don't understand that. You can ask me about the best time to visit, famous waterfalls, or things to do for families.";
+
+            if (userText.includes("hello") || userText.includes("hi")) {
+                response = "Hello! What would you like to know about Chhattisgarh?";
+            } else if (userText.includes("best time to visit") || userText.includes("weather")) {
+                response = "The best time to visit Chhattisgarh is during the winter season, from October to March. The weather is pleasant and ideal for sightseeing.";
+            } else if (userText.includes("waterfall") || userText.includes("chitrakote")) {
+                response = "Chhattisgarh is famous for its waterfalls! The most popular is Chitrakote Falls, often called the 'Niagara of India'. Tirathgarh Falls is another beautiful spot, perfect for a picnic.";
+            } else if (userText.includes("family") || userText.includes("kids")) {
+                response = "For families, I recommend visiting the Nandan Van Zoo & Safari in Raipur. The Purkhouti Muktangan, an open-air cultural museum, is also a great educational experience for all ages.";
+            } else if (userText.includes("students") || userText.includes("adventure")) {
+                response = "Students and adventure lovers should check out Mainpat, the 'Shimla of Chhattisgarh'. The area around Tirathgarh Falls also offers some great trekking opportunities.";
+            } else if (userText.includes("senior citizen") || userText.includes("relax")) {
+                response = "For a more relaxed trip, senior citizens might enjoy the spiritual atmosphere of the Danteshwari Temple in Dantewada or the ancient temples in the holy town of Rajim.";
+            } else if (userText.includes("thank you") || userText.includes("thanks")) {
+                response = "You're welcome! Is there anything else I can help you with?";
+            }
+
+            messageElement.textContent = response;
+            chatbox.scrollTo(0, chatbox.scrollHeight);
+        }
+
+        const handleChat = () => {
+            userMessage = chatInput.value.trim();
+            if (!userMessage) return;
+            chatInput.value = "";
+            chatInput.style.height = "auto";
+
+            chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+            chatbox.scrollTo(0, chatbox.scrollHeight);
+
+            setTimeout(() => {
+                const incomingChatLi = createChatLi("Thinking...", "incoming");
+                chatbox.appendChild(incomingChatLi);
+                chatbox.scrollTo(0, chatbox.scrollHeight);
+                generateResponse(incomingChatLi);
+            }, 600);
+        }
+
+        chatInput.addEventListener("input", () => {
+            chatInput.style.height = "auto";
+            chatInput.style.height = `${chatInput.scrollHeight}px`;
+        });
+
+        sendChatBtn.addEventListener("click", handleChat);
+        chatInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                handleChat();
+            }
+        });
+
+        closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+        chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+
+        // Calendar Logic
+        const monthYearElement = document.getElementById("month-year");
+        const calendarDaysElement = document.getElementById("calendar-days");
+        const prevMonthBtn = document.getElementById("prev-month");
+        const nextMonthBtn = document.getElementById("next-month");
+
+        let date = new Date();
+        let currYear = date.getFullYear();
+        let currMonth = date.getMonth();
+
+        const months = ["January", "February", "March", "April", "May", "June", "July",
+                      "August", "September", "October", "November", "December"];
+        
+        const renderCalendar = () => {
+            if (!monthYearElement) return; // safeguard if element doesn't exist
+            let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
+            let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate();
+            let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
+            let lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+            let liTag = "";
+
+            for (let i = firstDayofMonth; i > 0; i--) {
+                liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+            }
+
+            for (let i = 1; i <= lastDateofMonth; i++) {
+                let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
+                             && currYear === new Date().getFullYear() ? "active" : "";
+                liTag += `<li class="${isToday}">${i}</li>`;
+            }
+
+            for (let i = lastDayofMonth; i < 6; i++) {
+                liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
+            }
+            monthYearElement.innerText = `${months[currMonth]} ${currYear}`;
+            calendarDaysElement.innerHTML = liTag;
+        }
+        renderCalendar();
+
+        if(prevMonthBtn) {
+            prevMonthBtn.addEventListener("click", () => {
+                currMonth--;
+                if(currMonth < 0) {
+                    currMonth = 11;
+                    currYear--;
+                }
+                date = new Date(currYear, currMonth, new Date().getDate());
+                renderCalendar();
+            });
+        }
+
+        if(nextMonthBtn) {
+            nextMonthBtn.addEventListener("click", () => {
+                currMonth++;
+                if(currMonth > 11) {
+                    currMonth = 0;
+                    currYear++;
+                }
+                date = new Date(currYear, currMonth, new Date().getDate());
+                renderCalendar();
+            });
+        }
+    });
+    </script>
+
+</body>
+</html>
