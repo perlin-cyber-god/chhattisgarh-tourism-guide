@@ -1,40 +1,4 @@
-// Enter key for search
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') searchPlaces();
-    });
-});
-
-// ========== AI CHATBOT FUNCTIONS ==========
-
-function toggleChatbot() {
-    const chatbot = document.getElementById('chatbotContainer');
-    chatbot.classList.toggle('active');
-}
-
-async function sendChatMessage() {
-    const input = document.getElementById('chatbotInput');
-    const message = input.value.trim();
-    
-    if (!message) return;
-    
-    // Add user message
-    addChatMessage(message, 'user');
-    input.value = '';
-    
-    // Show typing indicator
-    addChatMessage('Typing...', 'bot', 'typing');
-    
-    try {
-        const response = await fetch(`${API_URL}/chatbot`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message })
-        });
-        
-        const data = await response.json();
-        
-        //// app.js - Frontend JavaScript
+// app.js - Frontend JavaScript
 const API_URL = 'http://localhost:5000/api';
 let allPlaces = [];
 let map;
@@ -52,6 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
     loadStickyNotes();
     renderCalendar();
     loadCalendarEvents();
+    
+    // Enter key for search
+    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') searchPlaces();
+    });
 });
 
 // Load trending places
@@ -494,9 +463,71 @@ async function showItineraryDetails(itineraryId) {
     }
 }
 
-// Enter key for search
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') searchPlaces();
-    });
-});
+// ========== AI CHATBOT FUNCTIONS ==========
+
+function toggleChatbot() {
+    const chatbot = document.getElementById('chatbotContainer');
+    chatbot.classList.toggle('active');
+}
+
+async function sendChatMessage() {
+    const input = document.getElementById('chatbotInput');
+    const message = input.value.trim();
+    
+    if (!message) return;
+    
+    // Add user message
+    addChatMessage(message, 'user');
+    input.value = '';
+    
+    // Show typing indicator
+    addChatMessage('Typing...', 'bot', 'typing');
+    
+    try {
+        const response = await fetch(`${API_URL}/chatbot`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message })
+        });
+        
+        const data = await response.json();
+        
+        // Remove typing indicator
+        const typingMsg = document.querySelector('.typing');
+        if (typingMsg) typingMsg.remove();
+        
+        // Add bot response
+        addChatMessage(data.response, 'bot');
+    } catch (error) {
+        console.error('Error:', error);
+        const typingMsg = document.querySelector('.typing');
+        if (typingMsg) typingMsg.remove();
+        addChatMessage('Sorry, I encountered an error. Please try again.', 'bot');
+    }
+}
+
+function addChatMessage(message, sender, className = '') {
+    const messagesContainer = document.getElementById('chatbotMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${sender} ${className}`;
+    messageDiv.textContent = message;
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+// Placeholder functions that need to be implemented
+function loadStickyNotes() {
+    console.log('loadStickyNotes function needs to be implemented');
+}
+
+function renderCalendar() {
+    console.log('renderCalendar function needs to be implemented');
+}
+
+function loadCalendarEvents() {
+    console.log('loadCalendarEvents function needs to be implemented');
+}
+
+function addToCalendar(placeId, placeName) {
+    console.log('addToCalendar function needs to be implemented', placeId, placeName);
+}
